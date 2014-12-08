@@ -338,7 +338,7 @@ module RestClient
       if RestClient::Platform.windows?
         RestClient::Windows::RootCerts.instance.to_a.uniq.each do |cert|
           begin
-            cert_store.add_cert(cert)
+            #cert_store.add_cert(cert)
           rescue OpenSSL::X509::StoreError => err
             # ignore duplicate certs
             raise unless err.message == 'cert already in hash table'
